@@ -25,7 +25,7 @@ class UrbanRoutesPage:
             EC.visibility_of_element_located(self.to_field))
         self.driver.find_element(*self.to_field).send_keys(to_text)
 
-    def enter_to_locations(self,from_text, to_text):
+    def enter_locations(self,from_text, to_text):
         self.enter_from_location(from_text)
         self.enter_to_location(to_text)
 
