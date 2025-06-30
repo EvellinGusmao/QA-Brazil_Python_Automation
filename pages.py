@@ -7,10 +7,18 @@ from helpers import retrieve_phone_code
 import time
 
 class UrbanRoutesPage:
-
     # Seção DE e PARA
     from_field = (By.ID, 'from')
     to_field = (By.ID, 'to')
+
+    # Selecionar tarifa e chamar taxi
+    taxi_option_locator = (By.XPATH,'//button[contains(text(),"Chamar um taxi")]')
+    comfort_icon_locator = (By,XPATH, '//img[@src="/static/media/kids.075fd8d4.svg"]')
+    comfort_active = (By.XPATH, '')
+
+    # Numero de telefone
+
+    # Metodo de pagamento
 
     def __init__(self,driver):
         self.driver = driver
