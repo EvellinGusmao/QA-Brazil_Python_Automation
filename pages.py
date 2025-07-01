@@ -37,7 +37,7 @@ class UrbanRoutesPage:
     add_comment = (By.ID, 'comment')
     switch_blanket = (By.CSS_SELECTOR, 'switch')
     switch_blanket_active = (By.CSS_SELECTOR,
-                             '#root > div > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.)
+                             '#root > div.app > div.workflow > div.workflow-subcontainer > div.tariff-picker.shown > div.form > div.reqs.open > div.reqs-body > div.r.r-type-switch > div.r-sw-container > div.r-sw > input.switch-input')
 
     add_icecream = (By.CSS_SELECTOR, 'counter-plus')
     qnt_icecream = (By.CSS_SELECTOR, 'counter-value')
@@ -122,3 +122,25 @@ class UrbanRoutesPage:
     def comment_comfirm(self):
         return  self.driver.find_element(*self.add_comment).get_attribute('value')
 
+    def switch_cobertor(self):
+        switch_ativo = self.driver.find_element(*self.switch_blanket)
+        switch_ativo.click()
+
+    def switch_cobertor_active(self):
+        switch = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(self.switch_blanket_active))
+        return switch.is_selected()
+
+    def add_ice(self):
+        self.driver.find_element(*self.add_icecream)
+
+    def qnt_sorvete(self):
+        return self.driver.find_element(*self.qnt_icecream).text
+
+    def call_taxi(self):
+        return self.driver.find_element(*self.call_taxi_button).click()
+
+    def pop_up_show(self):
+        pop_up = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located(self.pop_up))
+        return pop_up.text
