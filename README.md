@@ -1,6 +1,6 @@
 # Teste com Selenium
 
-<img src = "https://uspto.report/TM/98041965/mark">
+<img src = "https://uspto.report/TM/98041965/mark" width="300"/>
 
 Testes automatizados que contemplem todo o processo de solicitação de um táxi, cobrindo os seguintes itens:
 
